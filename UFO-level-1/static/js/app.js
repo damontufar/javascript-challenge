@@ -1,8 +1,9 @@
 // from data.js
 let tableData = data;
 
+///TABLE SECTION
 //Use D3 to select the table
-let table = d3.select("table")
+let table = d3.select("table");
 
 // Use d3 to create a bootstrap striped table
 // http://getbootstrap.com/docs/3.3/css/#tables-striped
@@ -22,3 +23,10 @@ data.forEach((row) => {
     });
 })
 
+///BUTTON FORM
+
+//Select the button
+let button = d3.select("#form-button");
+
+//Select the form
+let form = d3.select("#form");
