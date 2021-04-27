@@ -2,7 +2,7 @@
 /* Styling for HTML elements*/
 
 body{
-  background: rgb(74, 105, 136);
+  background: rgb(107, 138, 169);
 }
 
 h1 {
@@ -29,7 +29,7 @@ th{
 }
 
 .navbar {
-  background: rgb(74, 105, 136);
+  background:  rgb(107, 138, 169);
   margin: 0;
   padding: 5px;
 }
