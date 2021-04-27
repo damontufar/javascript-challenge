@@ -2,26 +2,49 @@
 /* Styling for HTML elements*/
 
 body{
-  background: lightslategrey;
+  background: rgb(74, 105, 136);
+}
+
+h1 {
+  font-size: 80px;
+}
+
+h2{
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+p{
+  font-size: 20px;
+}
+
+th{
+  color: whitesmoke;
 }
 
 /* Selecting elements by class */
 .container-fluid{
   background-color: black;
-  padding-left: 400px;
+  color: whitesmoke;
+  padding-left: 300px;
+  text-align: center;
 }
 
-.container{
-  color: whitesmoke;
-  margin-top: 80px;;
-}
+
 
 /* Selecting elements by ID */
 
+#form{
+  color: whitesmoke;
+  margin-top: 80px;
+  font-size: 20px;
+}
+
+#heading {
+  margin: 30px;
+}
 #index_image{
   width: 1600px;
   height: 400px;
-  
-  
   
 }
