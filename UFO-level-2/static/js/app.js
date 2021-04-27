@@ -29,18 +29,52 @@ function runEnter() {
     d3.event.preventDefault();
 
     // Select the input element and get the raw HTML node
-    let inputElement = d3.select("#date-form-input");
+    let inputDate = d3.select("#date-form-input");
+    let inputCity = d3.select("#city-form-input");
 
     // Get the value property of the input element
-    let inputValue = inputElement.property("value");
+    let dateValue = inputDate.property("value");
+    let cityValue = inputCity.property("value");
 
-    console.log(inputElement);
-    console.log(tableData);
+    console.log(inputDate);
+    console.log(inputCity);
 
-    // Use the form input to filter the data by date
-    let filteredData = tableData.filter(date => date.datetime === inputValue);
+    multipleFilter = (filter) => {
+        let buildFilter = {};
+        for (let keys in filter) {
+            if (filter[keys].constructor === Array && filter[keys].length>0) {
+                buildFilter[keys] = filter[keys];
+            }
+        }
+        return buildFilter;
+    }
 
-    console.log(filteredData);
+    filterData = (tableData, buildFilter) => { 
+        let filteredData = tableData.filter( (item) =>{
+            for (let key in buildFilter) {
+                if (item[key] === undefined || !buildFilter[key].includes(item[key])) {
+                    return false;
+                }
+            }
+            return true;
+        });
+        
+        return filteredData;
+    };
+
+    // Use the form input to filter the data by multiple criteria
+    let filter = {
+        datetime: dateValue,
+        city: cityValue,
+        state: [],
+        country: [],
+        shape: []
+    };
+
+    let buildFilter = multipleFilter(filter);
+    let result = filterData(tableData, buildFilter);
+
+    console.log(buildFilter);
 
     // Reference to the table body
     let tbody = d3.select("tbody");
@@ -51,10 +85,10 @@ function runEnter() {
 
     /// Appending Table
 
-    filteredData.forEach((row) => {
+    result.forEach((row) => {
         let newtr= tbody.append("tr");
         let entries = Object.entries(row);
-        entries.forEach(([key, value]) => {
+        entries.forEach(([k, value]) => {
             newtr.append("td").text(`${value}`);
      });
     })
