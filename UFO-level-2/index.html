@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ALIENS-R-REAL</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+    
+</head>
+
+<body>
+    <div class="container-fluid">
+    <nav class="navbar navbar-default">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">UFO Sightings
+              <img class="nav-ufo" src="static/images/ufo.svg">
+            </a>
+          </div>
+      </nav>
+        <div class="row">
+            <div class="col-md-12">
+                <section id="heading">
+                <h1> UFO Sightings</h1>
+                <p>The Truth is Out There</p>
+                </section>
+                <section id="image">
+                    <a href="static/images/nasa.jpg" target="blank" rel="noopener noreferrer">
+                        <img id="index_image" src="static/images/nasa.jpg">
+                    </a>
+                </section>
+            </div>
+      </div>
+    </div>  
+    <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+            <form id="form">
+                <div class="form-group">
+                    <label for="date-form">Enter a Date</label>
+                    <input class="form-control" id="date-form-input" name ="date-form" type="text" placeholder="1/10/2010">
+                </div>
+               <button id="form-button" type="button" class="btn btn-default"> Filter Table</button> 
+            </form>
+          </div>
+        </div>
+        <div class="row">
+            <section id="data"> 
+            <div class="col-md-12">
+                <h2>Filtered Reports by Date</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Country</th>
+                        <th>Shape</th>
+                        <th>Duration Minutes</th>
+                        <th>Comment</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script src= "static/js/data.js"></script>
+<script src= "static/js/app.js"></script>
+
+
+
+</html>
